@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #tabs-demo {
+            width: 100%;
+            height: 100vh;
+            background-color: burlywood;
+            padding-top: 150px;
+
+        }
+
+        .tabs {
+            display: flex;
+            width: 500px;
+            margin: auto;
+            border: 1px solid gray;
+            background-color: white;
+        }
+
+
+        .tab {
+            width: 150px;
+            height: 30px;
+            background-color: gray;
+            text-align: center;
+            line-height: 35px;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        .now {
+            color: white;
+            background-color: blue;
+        }
+
+        .content {
+            width: 500px;
+            height: 300px;
+            margin: auto;
+            border: 1px solid gray;
+            background-color: white;
+            display: none;
+
+        }
+
+        .act {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="tabs-demo">
+        <div class="tabs">
+            <div class="tab">新聞</div>
+            <div class="tab">遊戲</div>
+            <div class="tab">歷史</div>
+        </div>
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis similique assumenda illo necessitatibus rem
+            sunt quam error tempora saepe, ipsum maiores dignissimos fugiat, veniam exercitationem! Natus qui ipsum ad
+            sed?
+        </div>
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, esse omnis veritatis fugiat commodi
+            eligendi assumenda doloribus voluptatum ipsam nulla magni. Vitae, aspernatur sapiente veritatis optio eius
+            excepturi minus ratione.
+        </div>
+        <div class="content ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consequuntur qui laudantium necessitatibus
+            distinctio ab blanditiis amet, voluptatum inventore sed nemo? Beatae possimus non iure recusandae excepturi
+            est facilis iusto!
+        </div>
+    </section>
+    <script>
+        var tab = document.querySelectorAll('.tab')
+        var content = document.querySelectorAll('.content')
+        console.log(content[0])
+
+
+        for (let i = 0; i < tab.length; i++) {
+            tab[i].onclick = function () {
+                for (let i = 0; i < tab.length; i++) {
+                    tab[i].classList.remove('now')
+                    content[i].classList.remove('act')
+                }
+                tab[i].classList.add('now')
+                content[i].classList.add('act')
+            }
+        }
+
+
+
+
+
+        // tab1.onclick = function () {
+        //     tab1.classList.add('now')
+        //     tab2.classList.remove('now')
+        //     tab3.classList.remove('now')
+        //     content1.classList.add('act')
+        //     content2.classList.remove('act')
+        //     content3.classList.remove('act')
+
+        // }
+        // tab2.onclick = function () {
+        //     tab1.classList.remove('now')
+        //     tab2.classList.add('now')
+        //     tab3.classList.remove('now')
+        //     content1.classList.remove('act')
+        //     content2.classList.add('act')
+        //     content3.classList.remove('act')
+
+        // }
+        // tab3.onclick = function () {
+        //     tab1.classList.remove('now')
+        //     tab2.classList.remove('now')
+        //     tab3.classList.add('now')
+        //     content1.classList.remove('act')
+        //     content2.classList.remove('act')
+        //     content3.classList.add('act')
+        // }
+
+    </script>
+</body>
+
+</html>
